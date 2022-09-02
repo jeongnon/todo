@@ -30,7 +30,7 @@ public class MemberService {
 
     /**
      * 이름이 일치하는 프로필 반환
-     * @param number
+     * @param number 프로필번호
      * @return null 또는 profile
      */
     public Profile getProfile(int number) {
@@ -52,7 +52,7 @@ public class MemberService {
 
     /**
      * 담당자 등록
-     * @param name
+     * @param name 이름
      * @return 등록 결과
      */
     public boolean addProfile(String name) {

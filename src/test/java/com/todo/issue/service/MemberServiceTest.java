@@ -31,7 +31,7 @@ public class MemberServiceTest {
     @Test
     public void getNoProfileTest() {
         int number = memberService.getNextNumber(); // 신규 담당자 번호
-        log.info("new number = " + number);
+        log.debug("new number = " + number);
         assertThat(memberService.getProfile(number)).isNull();
     }
 
@@ -39,7 +39,7 @@ public class MemberServiceTest {
     @Test
     public void getNextNumberTest() {
         int number = memberService.getNextNumber(); // 신규 담당자 번호
-        log.info("new number = " + number);
+        log.debug("new number = " + number);
         assertThat(memberService.getNextNumber()).isGreaterThan(number);
         assertThat(memberService.getNextNumber()).isEqualTo(number + 2);
     }
@@ -49,7 +49,7 @@ public class MemberServiceTest {
     public void addMemberTest() {
         String name = "김희정";
         int number = memberService.getNextNumber(); // 등록한 담당자의 번호와 비교하기 위함
-        log.info("new number = {}", number);
+        log.debug("new number = {}", number);
 
         if (memberService.addProfile(name)) {
             // 등록한 담당자의 번호는 number 이후 신규 발급된 번호이기때문에 1 증가하였음
@@ -66,7 +66,7 @@ public class MemberServiceTest {
         List<Profile> profiles = memberService.getProfiles(); // 전체 리스트 조회
         assertThat(profiles.size()).isGreaterThanOrEqualTo(5); // 초기 세팅 된 담당자 5명보다 많아야 함
         profiles.forEach(p -> {
-            log.info("number = {}, name = {}", p.getNumber(), p.getName());
+            log.debug("number = {}, name = {}", p.getNumber(), p.getName());
         });
     }
 }

@@ -12,9 +12,9 @@ public enum ProgressStatus {
     CANCLE("취소"),
     ASSIGN("위임");
 
-    private final String status;
+    private final String name;
 
-    ProgressStatus(String status) {
-        this.status = status;
+    ProgressStatus(String name) {
+        this.name = name;
     }
 }
