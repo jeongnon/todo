@@ -1,6 +1,6 @@
-package com.todo.issue.common;
+package com.amore.task.common;
 
-import com.todo.issue.model.enums.ResponseStatus;
+import com.amore.task.model.enums.*;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.http.HttpStatus;

@@ -1,4 +1,4 @@
-package com.todo.issue.model.domain;
+package com.amore.task.model.domain;
 
 import lombok.Builder;
 import lombok.Getter;

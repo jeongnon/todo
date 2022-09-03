@@ -1,7 +1,7 @@
-package com.todo.issue.model.domain;
+package com.amore.task.model.domain;
 
-import com.todo.issue.model.enums.ProgressStatus;
-import com.todo.issue.model.enums.TaskLevel;
+import com.amore.task.model.enums.ProgressStatus;
+import com.amore.task.model.enums.TaskLevel;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
@@ -29,7 +29,7 @@ public class Todo {
     private TaskLevel taskLevel;
 
     /** 순서 */
-    private int seq;
+    private Integer seq;
 
     /** 업무 제목 */
     private String task;
@@ -46,6 +46,22 @@ public class Todo {
     /** log(Map)에 입력할 KEY로 사용 */
     public static final String KEY_TASK_LEVEL = "taskLevel";
     public static final String KEY_SEQ = "seq";
+
+    /**
+     * 우선순위 변동에 의해 순서 +1
+     */
+    public void addSequence() {
+        this.setSeq(this.getSeq() + 1);
+    }
+
+    /**
+     * 우선순위 변동에 의해 순서 -1
+     */
+    public void minusSequence() {
+        if (0 < this.getSeq()) {
+            this.setSeq(this.getSeq() - 1);
+        }
+    }
 
     public static Todo of(int num, LocalDate date, Profile assignee, TaskLevel taskLevel, int seq, String task, ProgressStatus status, String description) {
         Todo todo = Todo.builder()

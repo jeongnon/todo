@@ -1,4 +1,4 @@
-package com.todo.issue.model.enums;
+package com.amore.task.model.enums;
 
 import lombok.Getter;
 
@@ -9,7 +9,7 @@ import lombok.Getter;
 public enum ProgressStatus {
     OPEN("진행 중"),
     COMPLETE("완료"),
-    CANCLE("취소"),
+    CANCEL("취소"),
     ASSIGN("위임");
 
     private final String name;

@@ -1,4 +1,4 @@
-package com.todo.issue.model.enums;
+package com.amore.task.model.enums;
 
 import lombok.Getter;
 

@@ -1,8 +1,8 @@
-package com.todo.issue.service;
+package com.amore.task.service;
 
 import static org.assertj.core.api.Assertions.*;
 
-import com.todo.issue.model.domain.Profile;
+import com.amore.task.model.domain.Profile;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

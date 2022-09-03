@@ -1,10 +1,9 @@
-package com.todo.issue.model.dto;
+package com.amore.task.model.dto;
 
-import com.todo.issue.model.domain.Profile;
-import com.todo.issue.model.enums.ProgressStatus;
-import com.todo.issue.model.enums.TaskLevel;
+import com.amore.task.model.enums.ProgressStatus;
+import com.amore.task.model.domain.Profile;
+import com.amore.task.model.enums.TaskLevel;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDate;
@@ -29,7 +28,7 @@ public class TodoDto {
     private TaskLevel taskLevel;
 
     /** 순서 */
-    private int seq;
+    private Integer seq;
 
     /** 업무 제목 */
     private String task;

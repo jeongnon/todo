@@ -1,6 +1,6 @@
-package com.todo.issue.service;
+package com.amore.task.service;
 
-import com.todo.issue.model.domain.Profile;
+import com.amore.task.model.domain.Profile;
 import lombok.Synchronized;
 import org.springframework.stereotype.Service;
 

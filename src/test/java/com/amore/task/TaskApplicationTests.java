@@ -1,4 +1,4 @@
-package com.todo.issue;
+package com.amore.task;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

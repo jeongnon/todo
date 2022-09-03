@@ -1,4 +1,4 @@
-package com.todo.issue.common;
+package com.amore.task.common;
 
 import lombok.Getter;
 import lombok.Setter;

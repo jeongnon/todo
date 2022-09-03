@@ -1,8 +1,8 @@
-package com.todo.issue.controller;
+package com.amore.task.controller;
 
-import com.todo.issue.common.HandledException;
-import com.todo.issue.common.ResponseMessage;
-import com.todo.issue.model.enums.ResponseStatus;
+import com.amore.task.common.HandledException;
+import com.amore.task.common.ResponseMessage;
+import com.amore.task.model.enums.ResponseStatus;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
