@@ -1,6 +1,7 @@
 package com.amore.task.model.enums;
 
 import lombok.Getter;
+import org.springframework.scheduling.config.Task;
 
 /**
  * 중요도
@@ -19,5 +20,14 @@ public enum TaskLevel {
     TaskLevel(int code, String name) {
         this.code = code;
         this.name = name;
+    }
+
+    public static boolean isValid(String taskLevel) {
+        try {
+            TaskLevel.valueOf(taskLevel);
+            return true;
+        } catch (IllegalArgumentException e) {
+            return false;
+        }
     }
 }

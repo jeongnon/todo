@@ -1,7 +1,7 @@
 package com.amore.task.model.dto;
 
+import com.amore.task.model.domain.Member;
 import com.amore.task.model.enums.ProgressStatus;
-import com.amore.task.model.domain.Profile;
 import com.amore.task.model.enums.TaskLevel;
 import lombok.Getter;
 import lombok.Setter;
@@ -11,7 +11,7 @@ import java.util.HashMap;
 
 @Getter
 @Setter
-public class TodoDto {
+public class ProfileDto {
     /** 번호 */
     private int num = 0;
 
@@ -19,10 +19,10 @@ public class TodoDto {
     private LocalDate date;
 
     /** 담당자 */
-    private Profile assignee;
+    private MemberDto assignee;
 
     /** 위임자 */
-    private Profile reporter;
+    private MemberDto reporter;
 
     /** 중요도 */
     private TaskLevel taskLevel;
@@ -42,9 +42,9 @@ public class TodoDto {
     /** 로그 */
     private HashMap<String, Object> log;
 
-    public TodoDto() {}
+    public ProfileDto() {}
 
-    public TodoDto(LocalDate date, Profile assignee, String task, String description) {
+    public ProfileDto(LocalDate date, MemberDto assignee, String task, String description) {
         setDate(date);
         setAssignee(assignee);
         setTask(task);

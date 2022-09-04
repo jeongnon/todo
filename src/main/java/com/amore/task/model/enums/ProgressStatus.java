@@ -3,7 +3,7 @@ package com.amore.task.model.enums;
 import lombok.Getter;
 
 /**
- * profile 상태 (진행 상황)
+ * member 상태 (진행 상황)
  */
 @Getter
 public enum ProgressStatus {
