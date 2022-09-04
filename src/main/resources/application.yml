@@ -6,4 +6,4 @@ spring:
       add-mappings: false
 logging:
   level:
-    root: DEBUG
+    root: ERROR
