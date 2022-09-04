@@ -289,6 +289,7 @@ public class ProfileController {
             if (TaskLevel.isValid(node.get("level").asText())) {
                 // 입력받은 중요도가 유효한 값이면 변경
                 profileDto.setTaskLevel(TaskLevel.valueOf(node.get("level").asText()));
+                isValid = true;
             } else {
                 throw new HandledException(HttpStatus.BAD_REQUEST, ResponseStatus.BAD_REQUEST06);
             }
@@ -297,6 +298,7 @@ public class ProfileController {
         // 순서
         if ((node.has("seq")) && (0 <= node.get("seq").asInt())) {
             profileDto.setSeq(node.get("seq").asInt());
+            isValid = true;
         }
 
         // 요청 값이 유효하면 변경

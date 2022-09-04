@@ -138,6 +138,7 @@ public class ProfileService {
         if (ProgressStatus.ASSIGN.equals(profileDto.getStatus())) {
             // 해야할일을 위임받은 경우 우선순위는 A 중 최하순위
             taskLevel = TaskLevel.A;
+            profileDto.setTaskLevel(taskLevel);
         } else if (null != profileDto.getTaskLevel()) {
             // 해야할일의 중요도가 지정되어있을 경우(변경) 동일 중요도 내 최하순위
             taskLevel = profileDto.getTaskLevel();
@@ -165,7 +166,8 @@ public class ProfileService {
         } else {
             // 동일 중요도 내 순서
             if (0 < this.profiles.size()) {
-                if ((0 < index) && (taskLevel.equals(this.profiles.get(index - 1).getTaskLevel()))) {
+                if ((0 < index) && (taskLevel.equals(this.profiles.get(index - 1).getTaskLevel()))
+                        && (profileDto.getAssignee().getNum() == this.profiles.get(index - 1).getAssignee().getNumber())) {
                     // 동일 중요도 내 다음 순서로 우선순위 입력
                     sequence = this.profiles.get(index - 1).getSeq() + 1;
                 }
@@ -305,12 +307,13 @@ public class ProfileService {
         
         // 해야할일 삭제
         if (isValid) {
-            TaskLevel taskLevel = this.profiles.get(index).getTaskLevel(); // 삭제 대상 해야할일의 중요도
+            Profile target = this.profiles.get(index); // 삭제 대상 해야할일의 중요도
             this.profiles.remove(index);
 
             // 삭제 후 인덱스(삭제 시 인덱스 -1)부터 동일 중요도 내 순서 -1
             while (index < this.profiles.size()) {
-                if (taskLevel.equals(this.profiles.get(index).getTaskLevel())) { // 상단의 taskLevel 변수에 할당한 것과 다른 정보(삭제 됨)
+                if (target.getTaskLevel().equals(this.profiles.get(index).getTaskLevel())
+                        && (target.getAssignee().getNumber() == this.profiles.get(index).getAssignee().getNumber())) { // 상단의 taskLevel 변수에 할당한 것과 다른 정보(삭제 됨)
                     // 동일 중요도의 순서 -1
                     this.profiles.get(index).minusSequence();
                 } else {
